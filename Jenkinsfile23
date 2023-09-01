@@ -148,7 +148,7 @@ pipeline {
         stage('Trigger Downstream Job') {
             steps {
 /*                build job: 'cicd-pipeline-server0-helm-k8s', parameters: [string(name: 'IMAGEVERSION', value: env.BUILD_NUMBER)]*/
-                  build job: 'cicd-pipeline-server0-helm-k8s', parameters: [string(name: 'IMAGEVERSION', value: "8"]
+                  build job: 'cicd-pipeline-server0-helm-k8s', parameters: [string(name: 'IMAGEVERSION', value: "8")]
             } 
         }
     
