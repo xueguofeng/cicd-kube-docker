@@ -109,9 +109,6 @@ pipeline {
         }
 
 
-
-  
-/*
         stage('copy'){
             steps {
                 sh 'cp src/main/webapp/WEB-INF/views/login.jsp ./'
@@ -142,13 +139,13 @@ pipeline {
             sh "docker rmi $registry:$BUILD_NUMBER"
           }
         }
-*/
+
 
     
         stage('Trigger Downstream Job') {
             steps {
-/*                build job: 'cicd-pipeline-server0-helm-k8s', parameters: [string(name: 'IMAGEVERSION', value: env.BUILD_NUMBER)]*/
-                  build job: 'cicd-pipeline-server0-helm-k8s', parameters: [string(name: 'IMAGEVERSION', value: "8")]
+                build job: 'cicd-pipeline-server0-helm-k8s', parameters: [string(name: 'IMAGEVERSION', value: env.BUILD_NUMBER)]
+/*              build job: 'cicd-pipeline-server0-helm-k8s', parameters: [string(name: 'IMAGEVERSION', value: "8")] */
             } 
         }
     
