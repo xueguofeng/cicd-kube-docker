@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vproapp
+  name: vproapp-{{.Release.Name}}
   labels: 
     app: vproapp
 spec:
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: vproapp
-        image: vprofile/vprofileapp
+        image: richardxgf/vprofileapp:{{.Values.tag}}
         ports:
         - name: vproapp-port
           containerPort: 8080
