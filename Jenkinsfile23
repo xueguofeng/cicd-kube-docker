@@ -92,14 +92,15 @@ pipeline {
 		    
         }
 
+/src/main/webapp/WEB-INF/views
+
   */
 
         stage('copy'){
             steps {
-                sh 'cp target/vprofile-v2.war ./'
+                sh 'cp src/main/webapp/WEB-INF/views/login.jsp ./'
             }
         }
-
 
         stage('Building image') {
             steps{
