@@ -94,13 +94,6 @@ pipeline {
 
   */
 
-        stage('copy'){
-            steps {
-                sh 'cp target/vprofile-v2.war ./'
-            }
-        }
-
-
         stage('Building image') {
             steps{
               script {
